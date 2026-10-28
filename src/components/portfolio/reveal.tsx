@@ -8,14 +8,16 @@ export function Reveal({ children, className }: { children: ReactNode; className
     const el = ref.current;
     if (!el) return;
     const io = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
+      (entries) => {
+        const entry = entries.at(-1);
+        if (entry?.isIntersecting) {
           el.classList.add("reveal-visible");
           io.disconnect();
         }
       },
       { threshold: 0.1 },
     );
+
     io.observe(el);
     return () => io.disconnect();
   }, []);

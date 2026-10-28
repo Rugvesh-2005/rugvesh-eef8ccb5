@@ -2,11 +2,14 @@ import { ExternalLink, FolderKanban } from "lucide-react";
 import { Reveal, SectionHeading } from "./reveal";
 import { projects } from "@/data/portfolio";
 
-const accents: Record<string, { text: string; ring: string; glow: string }> = {
+const accents = {
   cyan: { text: "text-glow-cyan", ring: "ring-glow-cyan/30", glow: "hover:shadow-[0_20px_60px_-25px] hover:shadow-glow-cyan/50" },
   indigo: { text: "text-glow-indigo", ring: "ring-glow-indigo/30", glow: "hover:shadow-[0_20px_60px_-25px] hover:shadow-glow-indigo/50" },
   purple: { text: "text-glow-purple", ring: "ring-glow-purple/30", glow: "hover:shadow-[0_20px_60px_-25px] hover:shadow-glow-purple/50" },
-};
+} as const;
+
+type AccentKey = keyof typeof accents;
+
 
 export default function Projects() {
   return (
@@ -16,7 +19,8 @@ export default function Projects() {
 
         <div className="grid gap-6 sm:grid-cols-2">
           {projects.map((project) => {
-            const a = accents[project.accent];
+            const a = accents[project.accent as AccentKey];
+
             return (
               <Reveal key={project.title}>
                 <article
