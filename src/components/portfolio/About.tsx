@@ -12,7 +12,8 @@ export default function About() {
 
         <div className="grid gap-6 md:grid-cols-3">
           {summaryCards.map((card, i) => {
-            const Icon = icons[i];
+            const Icon = icons[i] ?? Code2;
+
             return (
               <Reveal key={card.title} className={i === 1 ? "md:-mt-4" : undefined}>
                 <article className="glass glow-card group h-full rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:border-glow-indigo/40">
