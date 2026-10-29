@@ -1,5 +1,11 @@
 import { useState } from "react";
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Download, FileText } from "lucide-react";
 import { experience, profile } from "@/data/portfolio";
@@ -12,7 +18,10 @@ const fullstackSkills = [
 ];
 
 const aiSkills = [
-  ["AI & LLM", "Prompt Engineering, LLM Evaluation, Data Annotation, Response Rating, Model Testing, OpenAI/Anthropic/Gemini APIs"],
+  [
+    "AI & LLM",
+    "Prompt Engineering, LLM Evaluation, Data Annotation, Response Rating, Model Testing, OpenAI/Anthropic/Gemini APIs",
+  ],
   ["Computer Vision", "OpenCV, MediaPipe"],
   ["Languages", "Python, SQL, JavaScript"],
   ["Workflow & Automation", "n8n, Slack, MultiMango, AWS (EC2, S3, VPC), Git & GitHub"],
@@ -30,7 +39,9 @@ function ResumePreview({ focus, skills }: { focus: string; skills: string[][] })
       </div>
 
       <div className="mt-4">
-        <h4 className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">Summary</h4>
+        <h4 className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+          Summary
+        </h4>
         <p className="mt-1.5 text-sm leading-relaxed text-foreground/90">
           {focus === "ai"
             ? "LLM post-training and evaluation specialist — data preparation, response rating, comparative assessments, prompt testing and human-in-the-loop validation, with computer vision pipelines and n8n automation."
@@ -39,7 +50,9 @@ function ResumePreview({ focus, skills }: { focus: string; skills: string[][] })
       </div>
 
       <div className="mt-4">
-        <h4 className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">Technical Skills</h4>
+        <h4 className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+          Technical Skills
+        </h4>
         <dl className="mt-1.5 space-y-1.5 text-sm">
           {skills.map(([k, v]) => (
             <div key={k} className="grid grid-cols-[130px_1fr] gap-2">
@@ -51,12 +64,16 @@ function ResumePreview({ focus, skills }: { focus: string; skills: string[][] })
       </div>
 
       <div className="mt-4">
-        <h4 className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">Experience</h4>
+        <h4 className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+          Experience
+        </h4>
         <div className="mt-1.5 flex items-baseline justify-between gap-3">
           <p className="text-sm font-semibold text-foreground">
             {experience.role} — {experience.company}
           </p>
-          <span className="whitespace-nowrap text-xs text-muted-foreground">{experience.period}</span>
+          <span className="whitespace-nowrap text-xs text-muted-foreground">
+            {experience.period}
+          </span>
         </div>
         <ul className="mt-1.5 list-disc space-y-1 pl-4 text-sm text-muted-foreground">
           {experience.bullets.slice(0, focus === "ai" ? 5 : 3).map((b) => (
@@ -66,7 +83,9 @@ function ResumePreview({ focus, skills }: { focus: string; skills: string[][] })
       </div>
 
       <div className="mt-4">
-        <h4 className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">Education</h4>
+        <h4 className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+          Education
+        </h4>
         <p className="mt-1.5 text-sm text-foreground">
           B.Tech CSE — Kamala Institute of Technology and Science (2022–2026) · CGPA 7.8/10
         </p>
@@ -75,7 +94,13 @@ function ResumePreview({ focus, skills }: { focus: string; skills: string[][] })
   );
 }
 
-export default function ResumeModal({ open, onOpenChange }: { open: boolean; onOpenChange: (v: boolean) => void }) {
+export default function ResumeModal({
+  open,
+  onOpenChange,
+}: {
+  open: boolean;
+  onOpenChange: (v: boolean) => void;
+}) {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="glass max-h-[90vh] max-w-2xl overflow-y-auto border-border sm:max-w-2xl">
@@ -91,10 +116,16 @@ export default function ResumeModal({ open, onOpenChange }: { open: boolean; onO
 
         <Tabs defaultValue="fullstack" className="mt-2">
           <TabsList className="grid w-full grid-cols-2 bg-secondary">
-            <TabsTrigger value="fullstack" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
+            <TabsTrigger
+              value="fullstack"
+              className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+            >
               Full-Stack Resume
             </TabsTrigger>
-            <TabsTrigger value="ai" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
+            <TabsTrigger
+              value="ai"
+              className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+            >
               AI &amp; LLM Resume
             </TabsTrigger>
           </TabsList>

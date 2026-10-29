@@ -1,4 +1,13 @@
-import { Download, Github, Linkedin, Mail, MapPin, MessageCircle, Phone, GraduationCap } from "lucide-react";
+import {
+  Download,
+  Github,
+  Linkedin,
+  Mail,
+  MapPin,
+  MessageCircle,
+  Phone,
+  GraduationCap,
+} from "lucide-react";
 import { Reveal } from "./reveal";
 import { profile } from "@/data/portfolio";
 
@@ -23,9 +32,13 @@ export default function Hero({ onOpenResumes }: { onOpenResumes: () => void }) {
             Hi, I'm <span className="text-gradient">Mateti Rugvesh</span>
           </h1>
 
-          <p className="mt-4 font-display text-lg font-medium text-foreground/90 sm:text-xl">{profile.tagline}</p>
+          <p className="mt-4 font-display text-lg font-medium text-foreground/90 sm:text-xl">
+            {profile.tagline}
+          </p>
 
-          <p className="mt-4 max-w-xl leading-relaxed text-muted-foreground">{profile.description}</p>
+          <p className="mt-4 max-w-xl leading-relaxed text-muted-foreground">
+            {profile.description}
+          </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <button
@@ -45,7 +58,9 @@ export default function Hero({ onOpenResumes }: { onOpenResumes: () => void }) {
           </div>
 
           <div className="mt-10">
-            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-muted-foreground">Connect</p>
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-muted-foreground">
+              Connect
+            </p>
             <div className="flex flex-wrap gap-2.5">
               {connectLinks.map(({ icon: Icon, label, value, href }) => (
                 <a

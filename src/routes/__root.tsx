@@ -9,6 +9,7 @@ import {
   type ErrorComponentProps,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 import appCss from "../styles.css?url";
 import { Toaster } from "@/components/ui/sonner";
@@ -90,7 +91,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:title", content: "Mateti Rugvesh — Full-Stack & AI Engineer" },
       {
         property: "og:description",
-        content: "Full-Stack & AI Engineer — scalable web apps, LLM post-training evaluation, prompt engineering and computer vision.",
+        content:
+          "Full-Stack & AI Engineer — scalable web apps, LLM post-training evaluation, prompt engineering and computer vision.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -109,7 +111,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
     ],
-
   }),
   shellComponent: RootShell,
   component: RootComponent,
@@ -126,9 +127,9 @@ function RootShell({ children }: { children: ReactNode }) {
       <body>
         {children}
         <Toaster position="bottom-right" />
+        <SpeedInsights />
         <Scripts />
       </body>
-
     </html>
   );
 }

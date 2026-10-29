@@ -13,7 +13,14 @@ export default function Skills() {
   return (
     <section id="skills" className="relative py-20 sm:py-24">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
-        <SectionHeading kicker="Expertise" title={<>Technical <span className="text-gradient">Skills</span></>} />
+        <SectionHeading
+          kicker="Expertise"
+          title={
+            <>
+              Technical <span className="text-gradient">Skills</span>
+            </>
+          }
+        />
 
         <Reveal>
           <div className="mb-8 flex flex-wrap justify-center gap-2">
@@ -40,7 +47,9 @@ export default function Skills() {
               <div className="glass h-full rounded-2xl p-6">
                 <div className="flex items-center gap-2.5">
                   <Cpu className="h-4 w-4 text-glow-cyan" />
-                  <h3 className="font-display text-base font-semibold text-foreground">{group.name}</h3>
+                  <h3 className="font-display text-base font-semibold text-foreground">
+                    {group.name}
+                  </h3>
                 </div>
                 <div className="mt-4 flex flex-wrap gap-2">
                   {group.skills.map((skill) => (

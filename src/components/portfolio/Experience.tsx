@@ -6,7 +6,14 @@ export default function Experience() {
   return (
     <section id="experience" className="relative py-20 sm:py-24">
       <div className="mx-auto max-w-4xl px-5 sm:px-8">
-        <SectionHeading kicker="Experience" title={<>Where I've <span className="text-gradient">Worked</span></>} />
+        <SectionHeading
+          kicker="Experience"
+          title={
+            <>
+              Where I've <span className="text-gradient">Worked</span>
+            </>
+          }
+        />
 
         <Reveal>
           <article className="glass glow-card relative rounded-2xl p-6 sm:p-8">
@@ -17,7 +24,9 @@ export default function Experience() {
                   <Briefcase className="h-5 w-5 text-glow-cyan" />
                 </div>
                 <div>
-                  <h3 className="font-display text-xl font-semibold text-foreground">{experience.role}</h3>
+                  <h3 className="font-display text-xl font-semibold text-foreground">
+                    {experience.role}
+                  </h3>
                   <p className="mt-0.5 flex items-center gap-1.5 text-sm text-glow-cyan">
                     <Building2 className="h-3.5 w-3.5" />
                     {experience.company}
@@ -31,7 +40,10 @@ export default function Experience() {
 
             <ul className="mt-6 grid gap-2.5 sm:grid-cols-2">
               {experience.bullets.map((b) => (
-                <li key={b} className="flex items-start gap-2.5 text-sm leading-relaxed text-muted-foreground">
+                <li
+                  key={b}
+                  className="flex items-start gap-2.5 text-sm leading-relaxed text-muted-foreground"
+                >
                   <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gradient-to-r from-glow-cyan to-glow-indigo" />
                   {b}
                 </li>

@@ -25,7 +25,9 @@ export default function Navbar({ onOpenResumes }: { onOpenResumes: () => void })
             {profile.initials}
           </span>
           <span className="hidden leading-tight sm:block">
-            <span className="block font-display text-sm font-semibold text-foreground">{profile.name}</span>
+            <span className="block font-display text-sm font-semibold text-foreground">
+              {profile.name}
+            </span>
             <span className="block text-[11px] text-muted-foreground">{profile.role}</span>
           </span>
         </a>
