@@ -49,13 +49,30 @@ export const summaryCards = [
     title: "Full-Stack Development",
     description:
       "End-to-end web applications across the stack — REST APIs, relational and document databases, and responsive React interfaces.",
-    tags: ["Python", "SQL", "JavaScript", "React.js", "Node.js", "Express.js", "Flask", "MySQL", "MongoDB"],
+    tags: [
+      "Python",
+      "SQL",
+      "JavaScript",
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "Flask",
+      "MySQL",
+      "MongoDB",
+    ],
   },
   {
     title: "AI & LLM Workflows",
     description:
       "Rigorous LLM evaluation and post-training support — prompt engineering, human-in-the-loop validation, and intelligent computer vision pipelines.",
-    tags: ["LLM Evaluation", "Prompt Engineering", "Human-in-the-Loop", "OpenCV", "MediaPipe", "n8n Automation"],
+    tags: [
+      "LLM Evaluation",
+      "Prompt Engineering",
+      "Human-in-the-Loop",
+      "OpenCV",
+      "MediaPipe",
+      "n8n Automation",
+    ],
   },
 ];
 
@@ -103,7 +120,13 @@ export const projects = [
   },
 ];
 
-export const skillCategories = ["All Skills", "AI & LLM", "Full-Stack", "Computer Vision", "Cloud & Tools"] as const;
+export const skillCategories = [
+  "All Skills",
+  "AI & LLM",
+  "Full-Stack",
+  "Computer Vision",
+  "Cloud & Tools",
+] as const;
 
 export const skillGroups = [
   {

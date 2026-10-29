@@ -6,7 +6,14 @@ export default function Education() {
   return (
     <section id="education" className="relative py-20 sm:py-24">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
-        <SectionHeading kicker="Background" title={<>Education &amp; <span className="text-gradient">Certifications</span></>} />
+        <SectionHeading
+          kicker="Background"
+          title={
+            <>
+              Education &amp; <span className="text-gradient">Certifications</span>
+            </>
+          }
+        />
 
         <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr]">
           <div className="relative space-y-6 border-l border-glow-indigo/30 pl-8">
@@ -18,8 +25,12 @@ export default function Education() {
                   </span>
                   <div className="glass rounded-2xl p-5 transition-colors hover:border-glow-indigo/40">
                     <div className="flex flex-wrap items-baseline justify-between gap-2">
-                      <h3 className="font-display text-base font-semibold text-foreground">{item.title}</h3>
-                      <span className="rounded-full bg-secondary px-2.5 py-0.5 text-xs text-glow-cyan">{item.score}</span>
+                      <h3 className="font-display text-base font-semibold text-foreground">
+                        {item.title}
+                      </h3>
+                      <span className="rounded-full bg-secondary px-2.5 py-0.5 text-xs text-glow-cyan">
+                        {item.score}
+                      </span>
                     </div>
                     <p className="mt-1 text-sm text-muted-foreground">{item.institution}</p>
                     <p className="mt-0.5 text-xs text-muted-foreground/80">{item.period}</p>
@@ -37,7 +48,9 @@ export default function Education() {
                     <Award className="h-5 w-5 text-glow-purple" />
                   </div>
                   <div className="min-w-0">
-                    <h3 className="truncate font-display text-sm font-semibold text-foreground">{cert.title}</h3>
+                    <h3 className="truncate font-display text-sm font-semibold text-foreground">
+                      {cert.title}
+                    </h3>
                     <p className="text-xs text-muted-foreground">
                       {cert.issuer} · {cert.date}
                     </p>

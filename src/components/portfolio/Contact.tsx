@@ -4,7 +4,17 @@ import { toast } from "sonner";
 import { Reveal, SectionHeading } from "./reveal";
 import { profile } from "@/data/portfolio";
 
-function CopyChip({ icon: Icon, label, value, copyValue }: { icon: typeof Mail; label: string; value: string; copyValue: string }) {
+function CopyChip({
+  icon: Icon,
+  label,
+  value,
+  copyValue,
+}: {
+  icon: typeof Mail;
+  label: string;
+  value: string;
+  copyValue: string;
+}) {
   const [copied, setCopied] = useState(false);
 
   const copy = async () => {
@@ -32,7 +42,11 @@ function CopyChip({ icon: Icon, label, value, copyValue }: { icon: typeof Mail; 
         aria-label={`Copy ${label}`}
         className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-border text-muted-foreground transition-colors hover:border-glow-cyan/50 hover:text-glow-cyan"
       >
-        {copied ? <Check className="h-3.5 w-3.5 text-glow-cyan" /> : <Copy className="h-3.5 w-3.5" />}
+        {copied ? (
+          <Check className="h-3.5 w-3.5 text-glow-cyan" />
+        ) : (
+          <Copy className="h-3.5 w-3.5" />
+        )}
       </button>
     </div>
   );
@@ -54,23 +68,41 @@ export default function Contact() {
   return (
     <section id="contact" className="relative py-20 sm:py-24">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
-        <SectionHeading kicker="Contact" title={<>Let's <span className="text-gradient">Talk</span></>} />
+        <SectionHeading
+          kicker="Contact"
+          title={
+            <>
+              Let's <span className="text-gradient">Talk</span>
+            </>
+          }
+        />
 
         <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
           <Reveal className="space-y-4">
             <p className="text-sm leading-relaxed text-muted-foreground">
-              Hiring for a full-stack or AI role? Send a message and it opens right in your email app — or copy the
-              details directly.
+              Hiring for a full-stack or AI role? Send a message and it opens right in your email
+              app — or copy the details directly.
             </p>
             <CopyChip icon={Mail} label="Email" value={profile.email} copyValue={profile.email} />
-            <CopyChip icon={Phone} label="Phone" value={profile.phoneDisplay} copyValue={profile.phone} />
+            <CopyChip
+              icon={Phone}
+              label="Phone"
+              value={profile.phoneDisplay}
+              copyValue={profile.phone}
+            />
           </Reveal>
 
           <Reveal>
-            <form onSubmit={handleSubmit} className="glass glow-card space-y-4 rounded-2xl p-6 sm:p-8">
+            <form
+              onSubmit={handleSubmit}
+              className="glass glow-card space-y-4 rounded-2xl p-6 sm:p-8"
+            >
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="space-y-1.5">
-                  <label htmlFor="name" className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
+                  <label
+                    htmlFor="name"
+                    className="text-xs font-medium uppercase tracking-wider text-muted-foreground"
+                  >
                     Name
                   </label>
                   <input
@@ -82,7 +114,10 @@ export default function Contact() {
                   />
                 </div>
                 <div className="space-y-1.5">
-                  <label htmlFor="email" className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
+                  <label
+                    htmlFor="email"
+                    className="text-xs font-medium uppercase tracking-wider text-muted-foreground"
+                  >
                     Email
                   </label>
                   <input
@@ -96,7 +131,10 @@ export default function Contact() {
                 </div>
               </div>
               <div className="space-y-1.5">
-                <label htmlFor="subject" className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
+                <label
+                  htmlFor="subject"
+                  className="text-xs font-medium uppercase tracking-wider text-muted-foreground"
+                >
                   Subject
                 </label>
                 <input
@@ -108,7 +146,10 @@ export default function Contact() {
                 />
               </div>
               <div className="space-y-1.5">
-                <label htmlFor="message" className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
+                <label
+                  htmlFor="message"
+                  className="text-xs font-medium uppercase tracking-wider text-muted-foreground"
+                >
                   Message
                 </label>
                 <textarea
