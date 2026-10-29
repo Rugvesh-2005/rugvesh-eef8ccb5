@@ -1,4 +1,4 @@
-import portraitAsset from "@/assets/rugvesh-portrait.jpg.asset.json";
+import portrait from "@/assets/rugvesh-portrait.jpg";
 
 export const profile = {
   name: "Mateti Rugvesh",
