@@ -1,4 +1,4 @@
-import portraitAsset from "@/assets/rugvesh-portrait.jpg.asset.json";
+import portrait from "@/assets/rugvesh-portrait.jpg";
 
 export const profile = {
   name: "Mateti Rugvesh",
@@ -16,7 +16,7 @@ export const profile = {
   linkedinLabel: "rugvesh-mateti",
   location: "Hyderabad, India",
   degreeTag: "B.Tech CSE 2026",
-  portrait: portraitAsset.url,
+  portrait: portrait,
   resumes: {
     fullstack: {
       label: "Full-Stack Resume",
